@@ -1,0 +1,16 @@
+{
+  "name": "bot_kamago",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "anti-swear-words-packages-discord": "^2.0.0",
+    "bad-words": "^3.0.4",
+    "discord.js": "^13.6.0"
+  }
+}
