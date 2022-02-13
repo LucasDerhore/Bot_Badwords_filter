@@ -11,6 +11,7 @@
   "dependencies": {
     "anti-swear-words-packages-discord": "^2.0.0",
     "bad-words": "^3.0.4",
-    "discord.js": "^13.6.0"
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
   }
 }

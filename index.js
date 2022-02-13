@@ -1,3 +1,7 @@
+require("dotenv").config();
+
+console.log(process.env.TOKENBOT);
+
 const { Client, Intents } = require("discord.js");
 const Filter = require("bad-words");
 var filter = (filter = new Filter());
@@ -6,7 +10,7 @@ const config = require("./config.json");
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
-client.login("OTQxNzc2ODIzNTY4Njk5Mzkz.Yga4BA.NxWL5SvZ0ZY3CxlCSUBp0IHjjOI");
+client.login(process.env.TOKENBOT);
 
 client.on("ready", () => {
   console.log("Bot online");
