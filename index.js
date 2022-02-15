@@ -8,15 +8,61 @@ var filter = (filter = new Filter());
 const config = require("./config.json");
 
 const client = new Client({
-  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+  intents: [
+    Intents.FLAGS.GUILDS,
+    Intents.FLAGS.GUILD_MESSAGES,
+    Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+  ],
 });
 client.login(process.env.TOKENBOT);
+
+const prefix = "!";
+
+// BOT RDY START
 
 client.on("ready", () => {
   console.log("Bot online");
   console.log(filter.clean("Don't be an ash0le"));
   //client.channels.cache.get("941796763453509632").send("Le bot est en ligne");
 });
+
+// BOT RDY STOP
+
+// BOT FILTER LINK START
+
+client.on("message", (message) => {
+  if (message.content.includes("https://")) {
+    console.log(
+      "deleted " + message.content + " from " + message.author.username
+    );
+    message.delete(1);
+    client.channels.cache
+      .get(message.channel.id)
+      .send("No links here, " + message.author);
+  }
+  if (message.content.includes("http://")) {
+    console.log(
+      "deleted " + message.content + " from " + message.author.username
+    );
+    message.delete(1);
+    client.channels.cache
+      .get(message.channel.id)
+      .send("No links here, " + message.author);
+  }
+  if (message.content.includes("www.")) {
+    console.log(
+      "deleted " + message.content + " from " + message.author.username
+    );
+    message.delete(1);
+    client.channels.cache
+      .get(message.channel.id)
+      .send("No links here, " + message.author.username);
+  }
+});
+
+// BOT FILTER LINK STOP
+
+// BOT FILTER BAD WORDS START
 
 client.on("message", (message) => {
   console.log(message.content);
@@ -31,5 +77,4 @@ client.on("message", (message) => {
   }
 });
 
-// Code pour que le bot ecrive dans un channel
-//client.channels.cache.get("9941796763453509632").send("Bot online");
+// BOT FILTER BAD WORDS STOP
