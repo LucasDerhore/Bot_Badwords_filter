@@ -13,6 +13,7 @@ const client = new Client({
     Intents.FLAGS.GUILD_MESSAGES,
     Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
   ],
+  partials: ["MESSAGE", "CHANNEL", "REACTION"],
 });
 client.login(process.env.TOKENBOT);
 
@@ -27,6 +28,27 @@ client.on("ready", () => {
 });
 
 // BOT RDY STOP
+
+// BOT VERIFY REACTION START
+
+client.on("messageReactionAdd", (reaction, user) => {
+  console.log(reaction);
+  console.log(user);
+  console.log(reaction._emoji.name);
+  if (
+    reaction.message.channelId === "941740180732264509" &&
+    reaction._emoji.name === "✅"
+  ) {
+    const role = reaction.message.guild.roles.cache.find(
+      (r) => r.id === "941741262208376872"
+    );
+    const guild = client.guilds.cache.get("941734057342009425");
+    const member = guild.members.cache.get(user.id);
+    member.roles.add(role);
+  }
+});
+
+// BOT VERIFY REACTION STOP
 
 // BOT FILTER LINK START
 
