@@ -9,6 +9,8 @@ Create BOT discord, with `discord.js`
 ## Features
 
 - Filter swear ✔
+- System authenticate reaction ✔
+- Filter link ✔
 
 ## Authors
 
