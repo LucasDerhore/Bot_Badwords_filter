@@ -53,7 +53,7 @@ client.on("messageReactionAdd", (reaction, user) => {
 // BOT FILTER LINK START
 
 client.on("message", (message) => {
-  if (message.content.includes("https://")) {
+  if (message.content.includes("https://") || message.content.includes("http://") || message.content.includes("www.")) {
     console.log(
       "deleted " + message.content + " from " + message.author.username
     );
@@ -61,24 +61,6 @@ client.on("message", (message) => {
     client.channels.cache
       .get(message.channel.id)
       .send("No links here, " + message.author);
-  }
-  if (message.content.includes("http://")) {
-    console.log(
-      "deleted " + message.content + " from " + message.author.username
-    );
-    message.delete(1);
-    client.channels.cache
-      .get(message.channel.id)
-      .send("No links here, " + message.author);
-  }
-  if (message.content.includes("www.")) {
-    console.log(
-      "deleted " + message.content + " from " + message.author.username
-    );
-    message.delete(1);
-    client.channels.cache
-      .get(message.channel.id)
-      .send("No links here, " + message.author.username);
   }
 });
 
