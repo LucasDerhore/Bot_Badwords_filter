@@ -88,10 +88,13 @@ client.on("messageCreate", async (message) => {
   const ctx = canvas.getContext("2d");
 
   // Load the background image and draw it to the canvas
-  const background = await Canvas.loadImage(path.join("./Bannniere.png"));
-  let x = 0;
-  let y = 0;
-  ctx.drawImage(background, x, y);
+  const background = await Canvas.loadImage(path.join("./bannniere.png"));
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  ctx.strokeStyle = "#161b28";
+  ctx.strokeRect(0, 0, canvas.width, canvas.height);
+  ctx.font = "70px sans-serif";
+  ctx.fillStyle = "#ffffff";
+  ctx.fillText("Welcome to KamagoTree World", 50, 40);
 
   // Load the user's profile picture and draw it
   const pfp = await Canvas.loadImage(
