@@ -11,6 +11,8 @@ Create BOT discord, with `discord.js`
 - Filter swear ✔
 - System authenticate reaction ✔
 - Filter link ✔
+- Invitation system ✔
+- Leveling system ✔
 
 ## Authors
 
