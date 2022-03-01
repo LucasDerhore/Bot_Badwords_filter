@@ -12,7 +12,7 @@ Create BOT discord, with `discord.js`
 - System authenticate reaction ✔
 - Filter link ✔
 - Invitation system ✔
-- Leveling system ✔
+- Leveling system (soon)
 
 ## Authors
 
